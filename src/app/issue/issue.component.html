@@ -71,7 +71,7 @@
 <div class=" col s12 m4  offset-m4">
   <label  >User</label>
   <select class="browser-default" [(ngModel)]="userCode"  >
-     <option value="" disabled selected>Choose User</option> 
+     <option value=""  disabled selected>Choose User</option> 
      <option  *ngFor="let item  of  userdata; let i = index; " value="{{item.userCode}}"  >{{item.userName}}</option>
   </select> 
 </div>

@@ -1,38 +1,94 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from  '@angular/router';
+// import { Component, OnInit, ViewChild } from '@angular/core';
+// import {Router} from  '@angular/router';
+// import { LoginService } from '../shared/user/login.service';
+// import { Login } from '../shared/user/login';
+// import { NgForm, FormControl } from '@angular/forms';
+
+// @Component({
+//   selector: 'app-login',
+//   templateUrl: './login.component.html',
+//   styleUrls: ['./login.component.css'],
+//    providers: [LoginService]
+// })
+// export class LoginComponent implements OnInit {
+// //  ใส่่ ค่า ใน private router:Router
+//  //this.router.navigate(['support','issue-list'])
+//   login: Login;
+//   constructor(
+//     private router:Router,
+//     private loginService: LoginService
+//   ) { this.login = new Login(); }
+
+//   //email:string;
+//   //password:string;
+ 
+
+//   @ViewChild('loginForm') loginForm: NgForm;
+//   ngOnInit() {
+//   }
+//    doLogin() {
+//     if ($(".invalid").length > 0) {
+//       Materialize.toast('Invalid', 1000);
+//     } else {
+//       this.loginService.doLogin(this.login).subscribe((res) => {
+//         if (res.success) {
+//           localStorage.setItem('token', res.token);
+//           this.router.navigate(['support', 'issue-list']);
+//         } else {
+//           Materialize.toast(res.message, 1000);
+//         }
+//       });
+
+//     }
+// }
+// }
+
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgForm, FormControl } from '@angular/forms';
+import { LoginService } from '../shared/user/login.service';
+import { Login } from '../shared/user/login';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [LoginService]
 })
 export class LoginComponent implements OnInit {
-//  ใส่่ ค่า ใน private router:Router
- //this.router.navigate(['support','issue-list'])
-  constructor(private router:Router) { }
+  // email:string;
+  // password:string;
+  login: Login;
 
-  email:string;
-  password:string;
-
-  
-  ngOnInit() {
+  constructor(
+    private router: Router,
+    private loginService: LoginService
+  ) {
+    this.login = new Login();
   }
-   dologin(){
-     if( $(".invalid").length>0)
-      {
-            // alert('Invalid');
-            Materialize.toast('Invalid',5000);
-      }
-          else
-            {
 
-               //alert('Success');
-                // Materialize.toast('Success',5000);
-                //
-              //  window.localStorage.setItem('token','Login')
-                 localStorage.setItem('token','Login')
-                 this.router.navigate(['support','issue-list'])
-            }
+  @ViewChild('loginForm') loginForm: NgForm;
 
-   }
+  ngOnInit() {
+
+  }
+
+  doLogin() {
+    if ($(".invalid").length > 0) {
+      Materialize.toast('Invalid', 1000);
+    } else {
+      this.loginService.doLogin(this.login).subscribe((res) => {
+        if (res.success) {
+          localStorage.setItem('token', res.token);
+          this.router.navigate(['support', 'issue-list']);
+        } else {
+          Materialize.toast(res.message, 1000);
+        }
+      });
+
+    }
+  }
+
 }
+
+

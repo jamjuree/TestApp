@@ -33,6 +33,8 @@ mode:string="ADD";
    lastName:string;
     _typeUser:string;
      Level:string;
+     email :string;
+      password:string;
 
    userdata=[];
 
@@ -56,6 +58,9 @@ mode:string="ADD";
                      this.lastName=  datas.lastName;
                      this._typeUser=  datas._typeUser;
                      this.Level=  datas.Level;
+                     this.email= datas.email;
+                     this.password= datas.password
+
                      },
                    err=>{
                     console.log(err);
@@ -108,7 +113,9 @@ onSave()
        userName: this.userName ,
         lastName: this.lastName,
         _typeUser:this._typeUser,
-        Level  : this.Level
+        Level  : this.Level,
+        email: this.email,
+        password : this.password
      
    }
    
