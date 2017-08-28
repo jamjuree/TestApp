@@ -1,0 +1,47 @@
+<div class="row">
+
+  <div class="col s12">
+
+<div class="row login-box">
+  <div class="col s12 m4 offset-m4 center">
+      <img class="responsive-img circle" src="http://lorempixel.com/200/200" alt="">
+  </div>
+    </div>
+
+
+    <div class="row">
+      <div class="input-field col s12 m4  offset-m4">
+        <i class="material-icons prefix blue-text ">account_circle</i> 
+        <input id="email" [(ngModel)]="email" type="email" class="validate" placeholder="please input your E-mail"
+        minlength="1"
+        >
+        <label for="email" data-error="please input valid email." >Email</label>
+      </div>
+    </div>
+ <!-- pattern="\d{5}"  -->
+        <!-- .ใส่ได้แต่ตัวเลขไม่เกิน 5 -->
+          <!-- ใส่ 3 ตัวไม่เกิน 8 -->
+          <!-- pattern="\d{3,8}"  -->
+    <div class="row">
+      <div class="input-field col s12 m4  offset-m4">
+         <i class="material-icons prefix blue-text ">lock_outline</i> 
+        <input id="password" [(ngModel)]="password" type="password" class="validate" 
+       
+        pattern="\d{3,8}" 
+        
+        placeholder="please input your Password"  minlength="1" >
+        <label for="password" data-error="please input valid Password.">Password</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        
+         <a class="waves-effect waves-light btn  orange darken-3  col s12 m4  offset-m4 " (click)="dologin()">Login</a>
+          <!-- <a class="waves-effect waves-light btn  orange darken-3  col s5 offset-s1 m4  offset-m4 "><i class="material-icons left  blue-text ">lock_outline</i>Login</a> -->
+      </div>
+    </div>
+
+    <h1>{{email}}</h1>
+    <h2>{{password}}</h2>
+  </div>
+</div>

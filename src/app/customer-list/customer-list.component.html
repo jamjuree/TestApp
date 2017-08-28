@@ -1,0 +1,66 @@
+
+
+<!-- search -->
+  <nav>
+    <div class="nav-wrapper blue">
+      <form>
+        <div class="input-field">
+          <input id="search" name="search"  type="search" required [(ngModel)]="searchText">
+          <label class="label-icon" for="search" ><i class="material-icons"   >search</i></label>
+          <i class="material-icons" (click)="search();">find_in_page</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+<!-- // -->
+ <table>
+        <thead>
+          <tr>
+              <th>Edit</th>
+              <th>Customer Code</th>
+              <th>Customer Name</th>
+              <th>Company</th>
+              <th>Delete</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let item  of  customerdata; let i = index;  ">
+            <td>
+           <a class="btn-floating btn-large waves-effect waves-light blue" (click)="onEditButtonClick(item._id);">
+             <i class="material-icons">edit
+               </i>
+            </a>
+
+
+            </td>
+            <td>{{item.customerCode}}</td>
+            <td>{{item.customerName}}</td>
+            <td *ngFor="let subItem of item.companyShow">{{subItem.compName}}</td>
+              <td>
+           <a class="btn-floating btn-large waves-effect waves-light red" (click)="onDeleteButtonClick(item._id);">
+             <i class="material-icons">delete </i>
+            </a>
+
+
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+<!-- page -->
+<!-- page -->
+   <ul class="pagination">
+    
+    <li class="waves-effect" *ngFor="let p of pageing; let i = index; " [ngClass]="{'active':i == numPage}"  (click)="gotoPage(i)"  >
+      <a   >{{p}}</a></li>
+    
+  </ul>
+
+
+ <div class="fixed-action-btn">
+      <a class="btn-floating btn-large waves-effect waves-light green"(click)="onAddButtonClick()" >
+        <i class="material-icons">add</i>
+      </a>
+      </div>
+

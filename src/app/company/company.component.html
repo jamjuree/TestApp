@@ -1,0 +1,33 @@
+<p>
+  company works!
+</p>
+<div class="row">
+
+  <div class="col s12">
+<div class="row">
+  <div class="input-field col s12 m4  offset-m4">
+      
+     <!-- <input id="Companycode"  [(ngModel)]="companyCode" type="text" class="validate" placeholder="please input Company Code" minlength="1">  -->
+     <!-- <label for="Companycode" data-error="please input valid Company Code.">Company Code</label>  -->
+   <input id="Companycode"  [(ngModel)]="companyCode" type="text" class="validate" placeholder="please input Company Code" minlength="1">
+          <label for="Companycode" data-error="please input valid Company Code.">Company Code</label>
+  
+  </div>
+
+</div>
+
+<div class="row">
+<div class="input-field col s12 m4  offset-m4">
+ 
+  <input id="Companyname"   [(ngModel)]="companyName"   type="text" class="validate" placeholder="please input your Company Name" minlength="1">
+  <label for="Companyname" data-error="please input valid Company name.">Company Name</label>
+</div>
+
+
+</div>
+<div class="row">
+<a class="btn s12 m4  offset-m4" (click)="onSave();">Save</a>
+<a class="btn s12 m4  offset-m4" (click)="oClickBack();">back</a>
+</div>
+</div>
+</div>
